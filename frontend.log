@@ -1,0 +1,21 @@
+nohup: ignoring input
+npm warn exec The following package was not found and will be installed: serve@14.2.4
+file:///home/ubuntu/.npm/_npx/aab42732f01924e5/node_modules/serve/build/main.js:242
+    throw new Error(
+    ^
+
+Error: Failed to serve: Error: listen EACCES: permission denied 0.0.0.0:80
+    at Server.setupListenHandle [as _listen2] (node:net:1800:21)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at file:///home/ubuntu/.npm/_npx/aab42732f01924e5/node_modules/serve/build/main.js:255:14
+    at new Promise (<anonymous>)
+    at startServer (file:///home/ubuntu/.npm/_npx/aab42732f01924e5/node_modules/serve/build/main.js:253:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/ubuntu/.npm/_npx/aab42732f01924e5/node_modules/serve/build/main.js:545:40
+    at Server.<anonymous> (file:///home/ubuntu/.npm/_npx/aab42732f01924e5/node_modules/serve/build/main.js:242:11)
+    at Server.emit (node:events:517:28)
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+Node.js v18.20.6
