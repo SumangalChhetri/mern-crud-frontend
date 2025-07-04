@@ -1,71 +1,111 @@
-# Getting Started with Create React App
+🚀 MERN CRUD App - Frontend (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend of the MERN (MongoDB, Express, React, Node.js) CRUD application. It interacts with the backend API to perform Create, Read, Update, and Delete operations and is deployed using AWS S3 with CI/CD via GitHub Actions.
 
-## Available Scripts
+🌐 Live Demo
 
-In the project directory, you can run:
+Frontend Live URL - S3 Static Website
 
-### `npm start`
+🎓 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+User-friendly interface
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Perform CRUD operations
 
-### `npm test`
+Integrated with backend REST API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Responsive UI
 
-### `npm run build`
+🔧 Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Axios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+React Hooks
 
-### `npm run eject`
+HTML/CSS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+GitHub Actions (for CI/CD)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🔄 Folder Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── package.json
+├── README.md
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🔧 Getting Started (Local Setup)
 
-## Learn More
+Clone the repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+git clone https://github.com/SumangalChhetri/mern-crud-frontend.git
+cd mern-crud-frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install dependencies
 
-### Code Splitting
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start the development server
 
-### Analyzing the Bundle Size
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Make sure the backend server is running on the specified API URL (default: http://localhost:5000)
 
-### Making a Progressive Web App
+📁 Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+You can configure your API endpoint in the React app via:
 
-### Advanced Configuration
+// src/api.js
+const API_URL = 'http://<your-ec2-public-ip>:5000/api/items';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🌌 Deployment (AWS S3)
 
-### Deployment
+1. Build your React app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm run build
 
-### `npm run build` fails to minify
+2. Configure S3 Bucket
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-Test deploy trigger - July 4
+Enable Static Website Hosting
+
+Upload contents of /build folder
+
+Set bucket policy and permissions
+
+🚧 CI/CD Setup
+
+GitHub Actions Workflow (.github/workflows/deploy-frontend.yml)
+
+On every push to master, GitHub builds the React app and deploys it to S3.
+
+Required Secrets in GitHub Repo:
+
+AWS_ACCESS_KEY_ID
+
+AWS_SECRET_ACCESS_KEY
+
+AWS_REGION
+
+S3_BUCKET_NAME
+
+💸 Cost Optimization
+
+Used S3 Free Tier static hosting
+
+No EC2 required for frontend
+
+Build artifacts optimized before deployment
+
+👤 Author
+
+Sumangal ChhetriGitHub: SumangalChhetri
+
+🔒 License
+
+This project is licensed under the MIT License.
