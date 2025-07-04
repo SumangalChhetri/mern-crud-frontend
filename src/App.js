@@ -7,34 +7,47 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
 
+  const API_URL = "http://13.234.225.157:5000/api/users";
+
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = async () => {
-    const res = await axios.get("http://localhost:5000/api/users");
-    setUsers(res.data);
+    try {
+      const res = await axios.get(API_URL);
+      setUsers(res.data);
+    } catch (err) {
+      console.error("Fetch error:", err);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email) return;
 
-    if (isEditing) {
-      await axios.put(`http://localhost:5000/api/users/${editId}`, form);
-      setIsEditing(false);
-      setEditId(null);
-    } else {
-      await axios.post("http://localhost:5000/api/users", form);
+    try {
+      if (isEditing) {
+        await axios.put(`${API_URL}/${editId}`, form);
+        setIsEditing(false);
+        setEditId(null);
+      } else {
+        await axios.post(API_URL, form);
+      }
+      setForm({ name: "", email: "" });
+      fetchUsers();
+    } catch (err) {
+      console.error("Submit error:", err);
     }
-
-    setForm({ name: "", email: "" });
-    fetchUsers();
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/users/${id}`);
-    fetchUsers();
+    try {
+      await axios.delete(`${API_URL}/${id}`);
+      fetchUsers();
+    } catch (err) {
+      console.error("Delete error:", err);
+    }
   };
 
   const handleEdit = (user) => {
