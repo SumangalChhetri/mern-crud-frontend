@@ -32,12 +32,19 @@ GitHub Actions (for CI/CD)
 
 frontend/
 ├── public/
+
 ├── src/
+
 │   ├── components/
+
 │   ├── App.js
+
 │   ├── index.js
+
 │   └── ...
+
 ├── package.json
+
 ├── README.md
 
 🔧 Getting Started (Local Setup)
