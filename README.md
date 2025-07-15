@@ -1,4 +1,4 @@
- 🚀 MERN CRUD App - Frontend (React)
+  🚀 MERN CRUD App - Frontend (React)
 
 This is the frontend of the MERN (MongoDB, Express, React, Node.js) CRUD application. It interacts with the backend API to perform Create, Read, Update, and Delete operations and is deployed using AWS S3 with CI/CD via GitHub Actions.
 
